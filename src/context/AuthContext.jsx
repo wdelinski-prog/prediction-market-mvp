@@ -3,13 +3,13 @@ import { initializeApp } from 'firebase/app'
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJETO",
-  storageBucket: "SEU_PROJETO.appspot.com",
-  messagingSenderId: "SEU_SENDER_ID",
-  appId: "SUA_APP_ID"
-}
+  apiKey: "AIzaSyARqbWdAWV2YoVvn13NrtkcVVJl1Kj5LYw",
+  authDomain: "prediction-market-mvp.firebaseapp.com",
+  projectId: "prediction-market-mvp",
+  storageBucket: "prediction-market-mvp.firebasestorage.app",
+  messagingSenderId: "570026995458",
+  appId: "1:570026995458:web:34d6f830b08120f9731c1b"
+};
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
