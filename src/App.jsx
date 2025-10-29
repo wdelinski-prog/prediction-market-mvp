@@ -1,43 +1,33 @@
-import React from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import Login from './pages/Login.jsx'
-import Register from './pages/Register.jsx'
-import Dashboard from './pages/Dashboard.jsx'
-import { useAuth } from './context/AuthContext.jsx'
+
+import React from 'react';
+import './App.css';
 
 function App() {
-  const { user, logout } = useAuth()
-
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-      <nav className="bg-white shadow p-4 flex justify-between">
-        <div>
-          <Link to="/" className="mr-4 font-bold">Prediction Market</Link>
-          {user && <Link to="/dashboard" className="mr-4">Dashboard</Link>}
+    <div className="app">
+      <header className="hero">
+        <h1>Prediction Market MVP</h1>
+        <p>Participe de previsões sem dinheiro real. Escolha, vote e acompanhe os resultados!</p>
+      </header>
+
+      <section className="cards">
+        <div className="card">
+          <h2>Previsão 1</h2>
+          <p>O dólar vai subir até o fim do mês?</p>
+          <button>Votar</button>
         </div>
-        <div>
-          {user ? (
-            <>
-              <span className="mr-2">{user.email}</span>
-              <button onClick={logout} className="bg-red-500 text-white px-2 py-1 rounded">Sair</button>
-            </>
-          ) : (
-            <>
-              <Link to="/login" className="mr-2">Entrar</Link>
-              <Link to="/register">Cadastrar</Link>
-            </>
-          )}
+        <div className="card">
+          <h2>Previsão 2</h2>
+          <p>O Brasil vai ganhar a próxima Copa?</p>
+          <button>Votar</button>
         </div>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
+      </section>
+
+      <footer className="footer">
+        <p>© 2025 Prediction Market MVP. Todos os direitos reservados.</p>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
